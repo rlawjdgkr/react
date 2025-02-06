@@ -1,13 +1,10 @@
+import { useState } from 'react';
+import './App.css';
+import TodoTemplate from './components/Todos/TodoTemplate';
 
+// 컴포넌트
+const App = () => {
+  return <TodoTemplate />;
+};
 
-
-function App() {
-
-
-  return (
-    <h1>안녕 리액트</h1>
-    
-  )
-}
-
-export default App
+export default App;
