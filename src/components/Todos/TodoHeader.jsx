@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './scss/TodoHeader.module.scss';
 
 const TodoHeader = ({count}) => {
-const TodoHeader = ({count}) => {
 
   const { day, 'tasks-left': left } = styles;
 
