@@ -1,11 +1,9 @@
-import React from 'react'
-import './App.css'
-import Player from './components/TimerGame/Player';
+import { useState } from 'react';
+import './App.css';
+import TodoTemplate from './components/Todos/TodoTemplate';
 
 const App = () => {
-  return <>
-  <Player/>
-  </>
+  return <TodoTemplate />;
 };
 
 export default App
