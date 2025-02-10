@@ -1,24 +1,35 @@
-import React, { useState } from "react";
-import { MdDelete, MdDone } from "react-icons/md";
-import styles from "./scss/TodoItem.module.scss";
+import React from 'react';
+import { MdDelete, MdDone } from 'react-icons/md';
 
-const TodoItem = () => {
-  const [click, setClick] = useState(false);
+import styles from './scss/TodoItem.module.scss';
 
-  const { text, remove, "todo-list-item": itemStyle, "check-circle": checkCircle } = styles;
+const TodoItem = ({ item, onDelete, onCheck }) => {
+  const {
+    text,
+    remove,
+    'todo-list-item': itemStyle,
+    'check-circle': checkCircle,
+    active,
+    finish,
+  } = styles;
+
+  const { id, title, done } = item;
+
+  // 삭제 처리 이벤트
+  const handleDelete = (e) => {
+    // console.log('delete!! id: ', id);
+    onDelete(id);
+  };
 
   return (
     <li className={itemStyle}>
-      <div
-        className={`${checkCircle} ${click ? styles.active : ""}`} 
-        onClick={() => setClick(!click)}
-      >
-        {click && <MdDone />} {
-
-        }
+      <div className={`${checkCircle} ${done ? active : ''}`} onClick={e => onCheck(id)}>
+        {done && <MdDone />}
       </div>
-      <span className={text}>할 일 어쩌구~~</span>
-      <div className={remove}>
+      <span className={`${text} ${done ? finish : ''}`}>{title}</span>
+      <div
+        className={remove}
+        onClick={handleDelete}>
         <MdDelete />
       </div>
     </li>

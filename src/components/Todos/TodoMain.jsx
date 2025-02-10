@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './scss/TodoMain.module.scss';
 import TodoItem from './TodoItem';
 
-const TodoMain = () => {
 
+// 컴포넌트
+const TodoMain = ({items, onRemove, onCheck}) => {
   
   return (
     <ul className={styles['todo-list']}>
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      {items.map((todo) => (
+        <TodoItem key={todo.id} item={todo} onDelete={onRemove} onCheck={onCheck} />
+      ))}
     </ul>
   );
 };

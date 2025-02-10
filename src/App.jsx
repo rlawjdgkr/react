@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import './App.css';
-import TodoTemplate from './components/Todos/TodoTemplate';
+import React from 'react'
+import './App.css'
+import Player from './components/TimerGame/Player';
 
-// 컴포넌트
 const App = () => {
-  return <TodoTemplate />;
+  return <>
+  <Player/>
+  </>
 };
 
-export default App;
+export default App
